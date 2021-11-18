@@ -28,15 +28,18 @@ public class BoardModServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String title = req.getParameter("title");
         String ctnt = req.getParameter("ctnt");
+        int iboard = MyUtils.getParameterInt(req,"pk");
 
         BoardVO param = new BoardVO();
         param.setTitle(title);
         param.setCtnt(ctnt);
+        param.setIboard(iboard);
 
         int result = BoardDAO.modBoard(param);
-        switch (result){
+        switch (result) {
             case 1:
-                res.sendRedirect("/board/detail"); break;
+                res.sendRedirect("/board/detail?pk=" + iboard);
+                break;
         }
 
 
