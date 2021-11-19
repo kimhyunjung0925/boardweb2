@@ -16,7 +16,7 @@
 <body>
     <h1>글 디테일</h1>
     <div>
-        <a href="/board/list">리스트로 돌아가기</a>
+        <a href="javascript:history.back()">리스트로 돌아가기</a>
     </div>
     <div>
         <a href="/board/prev"> <input type="button" value="이전글"></a>
