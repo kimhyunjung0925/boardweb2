@@ -1,4 +1,4 @@
-package com.koreait.board2.board;
+package com.koreait.board2.model;
 
 public class BoardVO {
     private String title;

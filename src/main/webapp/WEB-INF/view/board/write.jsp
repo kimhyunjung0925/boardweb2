@@ -16,10 +16,12 @@
     <% } %>
     <div>
         <form action="/board/write" method="post">
-            <div><input type="text" name="title" placeholder="title"></div>
+
+            <div><input type="text" name="title" placeholder="title" value="${requestScope.data.title}"></div>
             <div>
-                <textarea name="ctnt" placeholder="content"></textarea>
+                <textarea name="ctnt" placeholder="content" rows="20">${requestScope.data.ctnt}</textarea>
             </div>
+
             <div>
                 <input type="submit" value="등록">
                 <input type="reset" value="초기화">

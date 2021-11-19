@@ -1,5 +1,6 @@
-<%@ page import="com.koreait.board2.board.BoardVO" %>
+<%@ page import="com.koreait.board2.model.BoardVO" %>
 <%@ page import="com.koreait.board2.model.UserVO" %>
+<%@ page import="com.koreait.board2.model.BoardParamVO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     BoardVO vo = (BoardVO) request.getAttribute("data");
@@ -36,6 +37,7 @@
         <a href="/board/mod?pk=${requestScope.data.iboard}"> <input type="button" value="수정"></a>
         <% } %>
     </div>
+
     <div>${requestScope.err}</div>
 
 

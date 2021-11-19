@@ -1,14 +1,13 @@
 package com.koreait.board2.board;
 
 import com.koreait.board2.MyUtils;
-import com.koreait.board2.model.UserVO;
+import com.koreait.board2.model.BoardVO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/board/detail")

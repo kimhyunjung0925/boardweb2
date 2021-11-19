@@ -1,6 +1,7 @@
 package com.koreait.board2.board;
 
 import com.koreait.board2.MyUtils;
+import com.koreait.board2.model.BoardVO;
 import com.koreait.board2.model.UserVO;
 
 import javax.servlet.ServletException;

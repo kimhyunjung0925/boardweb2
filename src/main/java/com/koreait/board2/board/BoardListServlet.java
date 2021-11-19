@@ -1,6 +1,8 @@
 package com.koreait.board2.board;
 
 import com.koreait.board2.MyUtils;
+import com.koreait.board2.model.BoardParamVO;
+import com.koreait.board2.model.BoardVO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,16 +16,22 @@ import java.util.List;
 public class BoardListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        List<BoardVO> list = BoardDAO.selBoardList();
-        req.setAttribute("data",list);
-        //disForward는 항상 가장 아래에 두세요.
-        MyUtils.disForward(req, res,"board/list");
-    }
+        int recordCnt = 5;
+        BoardParamVO param = new BoardParamVO();
+        param.setRecordCnt(recordCnt);
+        req.setAttribute("maxPage", BoardDAO.selMaxPage(param));
 
+        int page = MyUtils.getParameterInt(req, "page", 1);
+        param.setPage(page);
+
+        req.setAttribute("list", BoardDAO.selBoardList(param));
+        //disForward는 항상 가장 아래
+        MyUtils.disForward(req, res, "board/list");
+    }
 }
 
 /*
-내장객체 (set get) Attribuet
+내장객체 (set get) Attribute
                                jsp
 pageContext(가장짧게 살아있음) 쏠 때 살아있고/ 응답완료시 죽음
 **request                     요청시 살아있고/ 응답완료시 죽음

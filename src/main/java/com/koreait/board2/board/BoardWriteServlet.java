@@ -1,9 +1,8 @@
 package com.koreait.board2.board;
 
 import com.koreait.board2.MyUtils;
+import com.koreait.board2.model.BoardVO;
 import com.koreait.board2.model.UserVO;
-import com.koreait.board2.user.UserDAO;
-import org.apache.catalina.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -46,6 +45,7 @@ public class BoardWriteServlet extends HttpServlet {
                 break;
             case 0:
                 req.setAttribute("err", "글 등록에 실패하였습니다.");
+                req.setAttribute("data",param);
                 doGet(req, res);
                 break;
         }
